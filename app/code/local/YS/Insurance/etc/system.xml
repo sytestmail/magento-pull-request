@@ -1,0 +1,71 @@
+<?xml version="1.0" ?>
+<config>
+    <sections>
+        <ysinsurance translate="label" module="ysinsurance">
+            <label>Shipping Insurance</label>
+            <tab>sales</tab>
+            <sort_order>340</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <rates translate="label">
+                    <clone_fields>1</clone_fields>
+                    <clone_model>ys_insurance/setting_carrier</clone_model>
+                    <label>Shipping Methods Insurance Rates</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>2</sort_order>
+                    <fields>
+                        <value>
+                            <label>Insurance value</label>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>1</sort_order>
+                        </value>
+                        <percent>
+                            <frontend_type>checkbox</frontend_type>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <label>Order percent</label>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>1</sort_order>
+                        </percent>
+                        <percents_number>
+                            <!--<frontend_type>checkbox</frontend_type>-->
+                            <!--<frontend_type>text</frontend_type>-->
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <label>Number of percents.</label>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>1</sort_order>
+                        </percents_number>
+                        <active>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <label>Insurance active</label>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>1</sort_order>
+                        </active>
+                        <heading>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <label>Method</label>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>1</sort_order>
+                        </heading>
+                    </fields>
+                </rates>
+            </groups>
+        </ysinsurance>
+    </sections>
+</config>
+

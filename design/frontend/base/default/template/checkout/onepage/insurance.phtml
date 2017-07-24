@@ -1,0 +1,48 @@
+<form id="co-insurance-form" action="">
+    <fieldset>
+        <?php if ($this->getCheckout()->getStepData('insurance', 'shipping_insurance')): ?>
+        <ul class="form-list">
+            <li id="insurance-form">
+                <fieldset>
+                    <ul>
+                        <li class="wide">
+                            <label for="insurance:value" ><?php echo $this->__('Do you want to use shipping insurance?') ?></label>
+                            <div class="input-box">
+                                <select class="required-entry" name="insurance[value]" id="insurance:value" >
+                                    <option value='<?php echo $this->getCheckout()->getStepData('insurance', 'shipping_insurance'); ?>' <?php if($this->getQuote()->getInsurance()){echo 'selected="selected"';} ?>>Yes</option>
+                                    <option value='0' <?php if(!$this->getQuote()->getInsurance()){echo 'selected="selected"';} ?>>No</option>
+                                </select>
+                            </div>
+                        </li>
+                    </ul>
+                </fieldset>
+            </li>
+        </ul>
+        <div class="insurance-value">
+            <ul>
+                <li>Insurance value for you shipping method: <b> <?php echo $this->getCheckout()->getStepData('insurance', 'currency'); ?>
+                        <?php echo $this->getCheckout()->getStepData('insurance', 'shipping_insurance') ?></b> </li>
+                <li>Total price: <b><?php echo $this->getCheckout()->getStepData('insurance', 'currency'); ?>
+                        <?php echo $this->getCheckout()->getStepData('insurance', 'total') ?></b> </li>
+                <li>Total price with insurance: <b><?php echo $this->getCheckout()->getStepData('insurance', 'currency'); ?>
+                        <?php echo $this->getCheckout()->getStepData('insurance', 'total_with_insurance') ?></b> </li>
+            </ul>
+        </div>
+        <?php else:?>
+            <div> <?php echo $this->__('There is no insurance for your shipping method.') ?></div>
+        <?php endif;?>
+        <div class="buttons-set" id="insurance-buttons-container">
+            <button type="button" title="<?php echo $this->__('Continue') ?>" class="button" onclick="insurance.save()"><span><span><?php echo $this->__('Continue') ?></span></span></button>
+        <span class="please-wait" id="insurance-please-wait" style="display:none;">
+            <img src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif') ?>" alt="<?php echo $this->__('Loading next step...') ?>" title="<?php echo $this->__('Loading next step...') ?>" class="v-middle" /> <?php echo $this->__('Loading next step...') ?>
+        </span>
+        </div>
+    </fieldset>
+</form>
+
+<script type="text/javascript">
+    //<![CDATA[
+    var insurance = new InsuranceMethod('co-insurance-form','<?php echo $this->getUrl('checkout/onepage/saveInsurance') ?>');
+    var insuranceForm = new VarienForm('co-insurance-form');
+    //]]>
+</script>
