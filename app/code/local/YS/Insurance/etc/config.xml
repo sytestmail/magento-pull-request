@@ -103,18 +103,6 @@
                 </totals>
             </order_creditmemo>
         </sales>
-        <pdf>
-            <total>
-                <insurance translate="title">
-                    <title>Shipping Insurance</title>
-                    <source_field>insurance</source_field>
-                    <model>YS_Insurance_Model_Sales_Order_Pdf_Total_Pdf</model>
-                    <font_size>7</font_size>
-                    <display_zero>0</display_zero>
-                    <sort_order>200</sort_order>
-                </insurance>
-            </total>
-        </pdf>
     </global>
     <frontend>
         <routers>

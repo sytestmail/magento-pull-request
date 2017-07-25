@@ -4,8 +4,7 @@ class YS_Insurance_Model_Sales_Order_Pdf_Total_Pdf extends Mage_Sales_Model_Orde
 {
     public function getTotalsForDisplay()
     {
-        die();
-//        $amount = $this->getOrder()->getInsurance();
+
         $amount = $this->getOrder()->formatPriceTxt($this->getAmount());
 
         if ($this->getAmountPrefix()) {

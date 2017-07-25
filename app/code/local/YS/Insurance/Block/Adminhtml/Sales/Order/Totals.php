@@ -9,7 +9,6 @@ class YS_Insurance_Block_Adminhtml_Sales_Order_Totals extends Mage_Adminhtml_Blo
      */
     protected function _initTotals()
     {
-//        TODO: проверить правльно ли переопределен блок
         parent::_initTotals();
         $amount =  $this->getSource()->getInsurance();
         if ($amount) {
